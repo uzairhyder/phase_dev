@@ -235,9 +235,12 @@ class MY_Controller_Admin extends CI_Controller {
 							}
 							$value = $list_data[$value] ;
 							break;
+						case 'date':
+							$value = date('m-d-Y',strtotime($value));
+							break;
 						
 						case 'hidden':
-							continue;
+							continue 2;
 							break;
 					}
 

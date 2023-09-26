@@ -305,7 +305,8 @@ var FormValidation = function () {
             //initialize datepicker
             $('.date-picker').datepicker({
                 rtl: Metronic.isRTL(),
-                autoclose: true
+                autoclose: true,
+                format: 'm/dd/y'
             });
             $('.date-picker .form-control').change(function() {
                 form3.validate().element($(this)); //revalidate the chosen dropdown value and show error or success message for the input 

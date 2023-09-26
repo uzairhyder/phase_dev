@@ -4,7 +4,8 @@ var TableAjax = function () {
         //init date pickers
         $('.date-picker').datepicker({
             rtl: Metronic.isRTL(),
-            autoclose: true
+            autoclose: true,
+            format: 'm/dd/y'
         });
     }
 

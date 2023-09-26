@@ -6,9 +6,9 @@ var ComponentsPickers = function () {
             $('.date-picker').datepicker({
                 rtl: Metronic.isRTL(),
                 orientation: "left",
-                autoclose: true
+                autoclose: true,
+                format: 'm/dd/y'
             });
-            //$('body').removeClass("modal-open"); // fix bug when inline picker is used in modal
         }
 
         /* Workaround to restrict daterange past date select: http://stackoverflow.com/questions/11933173/how-to-restrict-the-selectable-date-ranges-in-bootstrap-datepicker */

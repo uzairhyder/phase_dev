@@ -238,8 +238,9 @@ class Model_camp_result extends MY_Model
             'camp_result_date' => array(
                 'table' => $this->_table,
                 'name' => 'camp_result_date',
-                'label' => 'Date',
-                'type' => 'date',
+                'label' => 'Date Format (Month-Date-Year)',
+                'type' => 'text',
+                'type_dt'   => 'date',
                 'attributes' => array(),
                 'js_rules' => 'required',
                 'rules' => 'required|trim|htmlentities'

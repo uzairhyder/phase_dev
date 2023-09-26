@@ -433,8 +433,9 @@ class Model_punter_ranking extends MY_Model
         'punter_ranking_last_camp_attended'=>array(
           'table'   => $this->_table,
           'name'   => 'punter_ranking_last_camp_attended',
-          'label'   => 'Last Camp Attended',
-          'type'   => 'date',
+          'label'   => 'Last Camp Attended - Format <br> (Month-Date-Year)',
+          'type' => 'text',
+            'type_dt'   => 'date',
         //   'default'=>date("m/d/Y"),
           'attributes'   => array(),
           'js_rules'   => '',

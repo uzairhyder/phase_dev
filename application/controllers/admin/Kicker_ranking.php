@@ -71,14 +71,11 @@ class Kicker_ranking extends MY_Controller {
 	{
         // debug($_POST,1);
         $param['where']['kicker_ranking_id'] = $_POST['kicker_ranking_id'];
+        // $param['order'] = 'kicker_ranking_id desc';
         $last_pos = $this->model_kicker_ranking->find_one($param);
         // debug($last_pos,1);
 
-        if (isset($_POST['kicker_ranking']['kicker_ranking_createdon'])) {
-            unset($_POST['kicker_ranking']['kicker_ranking_createdon']);
-        }
-    //    unset($_POST['kicker_ranking']['kicker_ranking_createdon']);
-        // if($_POST['kicker_ranking']['kicker_ranking_createdon']){
+        // if(!empty($_POST)){
         //     // debug($_POST,1);
         // $_POST['kicker_ranking']['kicker_ranking_position'] = $last_pos['kicker_ranking_id']+1;
         // }

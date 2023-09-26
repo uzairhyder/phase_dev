@@ -81,13 +81,13 @@ Class Tkd_form_helper
 	public function gen_update_timestamp($p=array())
 	{
         $class = (array_filled($p['attributes']>0))?$p['attributes']['class'] : '';
-		return '<input class=" form-control '.$class .'" id="'.$p['id'].'" '.$p['additional'].' name="' . $p['field_name'] .'" type="hidden" value="'.date("Y-m-d").'"/>';
+		return '<input class=" form-control '.$class .'" id="'.$p['id'].'" '.$p['additional'].' name="' . $p['field_name'] .'" type="hidden" value="'.date("m-d-Y").'"/>';
 	}
 
 	public function gen_created($p=array())
 	{
         $class = (array_filled($p['attributes']>0))?$p['attributes']['class'] : '';
-		return '<input class=" form-control '.$class .'" id="'.$p['id'].'" '.$p['additional'].' name="' . $p['field_name'] .'" type="hidden" value="'.date("Y-m-d").'"/>';
+		return '<input class=" form-control '.$class .'" id="'.$p['id'].'" '.$p['additional'].' name="' . $p['field_name'] .'" type="hidden" value="'.date("m-d-Y").'"/>';
 	}
 
 	public function gen_text($p='')
@@ -483,7 +483,7 @@ Class Tkd_form_helper
 	// public function gen_date($p=array())
 	// {
 	// 	$this->_CI->register_plugins(array("bootstrap-datepicker"));
-	// 	$p['field_data'] = ($p['field_data']=="0000-00-00" || !$p['field_data'] ) ?  date("Y-m-d") : $p['field_data'] ;
+	// 	$p['field_data'] = ($p['field_data']=="0000-00-00" || !$p['field_data'] ) ?  date("m-d-Y") : $p['field_data'] ;
 	// 	return '
  //              <div class="col-md-3 col-xs-11">
  //                  <input type="text" value="'.$p['field_data'].'" id="'.$p['id'].'" size="16" name="'.$p['field_name'] .'" class="form-control form-control-inline input-medium default-date-picker">
@@ -496,7 +496,7 @@ Class Tkd_form_helper
     {
         $this->_CI->register_plugins(array("bootstrap-datetimepicker1"));
         //$this->_CI->register_plugins(array("bootstrap-datepicker"));
-        $p['field_data'] = ($p['field_data']=="0000-00-00" || !$p['field_data'] ) ?  date("Y-m-d") : $p['field_data'] ;
+        $p['field_data'] = ($p['field_data']=="0000-00-00" || !$p['field_data'] ) ?  date("m-d-Y") : $p['field_data'] ;
         $var = '';
         //$var .= '<div class="col-md-3 col-xs-11">';
         $var .= '<input type="text" value="'.$p['field_data'].'" id="'.$p['id'].'" size="16" name="'.$p['field_name'] .'" class="form-control form-control-inline default-date-picker1">';
@@ -509,7 +509,7 @@ Class Tkd_form_helper
 	public function gen_datetime($p=array())
 	{
 		$this->_CI->register_plugins(array("bootstrap-datetimepicker"));
-		$p['field_data'] = ($p['field_data']=="0000-00-00" || !$p['field_data'] ) ?  date("Y-m-d") : $p['field_data'] ;
+		$p['field_data'] = ($p['field_data']=="0000-00-00" || !$p['field_data'] ) ?  date("m-d-Y") : $p['field_data'] ;
 		return '
               <div class="input-group date form_datetime-component">
                     <span class="input-group-btn">
