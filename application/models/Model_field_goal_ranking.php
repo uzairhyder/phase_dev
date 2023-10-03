@@ -437,7 +437,7 @@ class Model_field_goal_ranking extends MY_Model
         'field_goal_ranking_last_camp_attended'=>array(
           'table'   => $this->_table,
           'name'   => 'field_goal_ranking_last_camp_attended',
-          'label'   => 'Last Camp Attended - Format <br> (Month-Date-Year)',
+          'label'   => 'Last Camp Attended - Format <br> (Month/Date/Year)',
           // 'type'   => 'date',
           'type' => 'text',
           'type_dt'   => 'date',

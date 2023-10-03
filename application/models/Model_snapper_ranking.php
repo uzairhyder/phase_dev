@@ -433,7 +433,7 @@ class Model_snapper_ranking extends MY_Model
         'snapper_ranking_last_camp_attended'=>array(
           'table'   => $this->_table,
           'name'   => 'snapper_ranking_last_camp_attended',
-          'label'   => 'Last Camp Attended - Format <br> (Month-Date-Year)',
+          'label'   => 'Last Camp Attended - Format <br> (Month/Date/Year)',
           'type' => 'text',
             'type_dt'   => 'date',
         //   'default'=>date("m/d/Y"),
