@@ -88,6 +88,7 @@ class Model_admins extends MY_Model {
                 'label'   => 'ID',
                 'primary'   => 'primary',
                 'type'   => 'hidden',
+                'type_dt' => 'text',
                 'attributes'   => array(),
                 'js_rules'   => '',
                 'rules'   => 'trim'
@@ -362,6 +363,7 @@ class Model_admins extends MY_Model {
                 'name'   => 'user_createdon',
                 'label'   => 'Createdon',
                 'type'   => 'hidden',
+                 'type_dt' => 'date',
                 'attributes'   => array(),
                 'rules'   => 'trim'
             ),

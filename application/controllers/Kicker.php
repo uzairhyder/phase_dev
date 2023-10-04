@@ -105,6 +105,7 @@ class Kicker extends MY_Controller
             $this->db->from('mk_kicker_ranking p');
             $this->db->join('mk_kicker_year pos', 'p.kicker_ranking_year = pos.kicker_year_id', 'inner');
             $this->db->where('p.kicker_ranking_year =', $year['kicker_detail']['kicker_year_id']); // Filter by year
+            $this->db->where('p.kicker_ranking_status !=',2);
             $this->db->order_by('p.kicker_ranking_prospect', 'DESC');
             $this->db->order_by('p.kicker_ranking_position', 'ASC');
             $query = $this->db->get();

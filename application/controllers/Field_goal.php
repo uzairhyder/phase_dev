@@ -97,6 +97,7 @@ class Field_goal extends MY_Controller
             $this->db->from('mk_field_goal_ranking f');
             $this->db->join('mk_field_goal_year pos', 'f.field_goal_ranking_year = pos.field_goal_year_id', 'inner');
             $this->db->where('f.field_goal_ranking_year =', $year['field_goal_detail']['field_goal_year_id']); // Filter by year
+               $this->db->where('f.field_goal_ranking_status !=',2);
             $this->db->order_by('f.field_goal_ranking_prospect', 'DESC');
             $this->db->order_by('f.field_goal_ranking_position', 'ASC');
             $query = $this->db->get();

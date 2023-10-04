@@ -97,6 +97,7 @@ class Snapper extends MY_Controller
             $this->db->from('mk_snapper_ranking s');
             $this->db->join('mk_snapper_year pos', 's.snapper_ranking_year = pos.snapper_year_id', 'inner');
             $this->db->where('s.snapper_ranking_year =', $year['snapper_detail']['snapper_year_id']); // Filter by year
+            $this->db->where('s.snapper_ranking_status !=',2);
             $this->db->order_by('s.snapper_ranking_prospect', 'DESC');
             $this->db->order_by('s.	snapper_ranking_position', 'ASC');
             $query = $this->db->get();

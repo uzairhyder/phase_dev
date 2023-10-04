@@ -101,7 +101,8 @@ class Punter extends MY_Controller
             $this->db->select('*');
             $this->db->from('mk_punter_ranking p');
             $this->db->join('mk_punter_year pos', 'p.punter_ranking_year = pos.punter_year_id', 'inner');
-            $this->db->where('p.punter_ranking_year =', $year['punter_detail_detail']['punter_year_id']); // Filter by year
+            $this->db->where('p.punter_ranking_year =', $year['punter_detail_detail']['punter_year_id']);
+             $this->db->where('p.punter_ranking_status !=',2);
             $this->db->order_by('p.punter_ranking_prospect', 'DESC');
             $this->db->order_by('p.	punter_ranking_position', 'ASC');
             $query = $this->db->get();

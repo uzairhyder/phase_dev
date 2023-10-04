@@ -64,6 +64,7 @@ class Model_seo_plugin extends MY_Model
                 'name' => 'sp_name',
                 'label' => 'Page Name',
                 'type' => 'hidden',
+                 'type_dt' => 'text',
                 'attributes' => array(),
                 'js_rules' => '',
                 'rules' => 'trim|htmlentities'

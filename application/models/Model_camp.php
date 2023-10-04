@@ -238,7 +238,7 @@ class Model_camp extends MY_Model
               'camp_date' => array(
                 'table' => $this->_table,
                 'name' => 'camp_date',
-                'label' => 'Date Format (Month-Date-Year)',
+                'label' => 'Date Format (Month/Date/Year)',
                 'type' => 'text',
                 'type_dt'   => 'date',
                 'attributes' => array(),
