@@ -21,7 +21,8 @@ class Banner extends MY_Controller {
 
 		parent::__construct();
         //$this->dt_params['dt_headings'] = "banner_id,banner_page,banner_heading,banner_image,banner_status";
-        $this->dt_params['dt_headings'] = "banner_id,,banner_page,banner_heading,banner_sub_heading,banner_description,banner_status";
+        // $this->dt_params['dt_headings'] = "banner_id,,banner_page,banner_heading,banner_sub_heading,banner_description,banner_status";
+             $this->dt_params['dt_headings'] = "banner_id,banner_page,banner_heading,banner_sub_heading,banner_status";
         //$this->dt_params['dt_headings'] = "banner_id,banner_heading,banner_status";
         $this->dt_params['searchable'] = array("banner_id","banner_heading","banner_status");
 

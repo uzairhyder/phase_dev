@@ -23,7 +23,8 @@ class Model_banner extends MY_Model
     {
         // Call the Model constructor
         //$this->pagination_params['fields'] = "banner_id,banner_page,banner_heading,CONCAT(banner_image_path,banner_image) AS banner_image,banner_status";
-        $this->pagination_params['fields'] = "banner_id,,banner_page,banner_heading,banner_sub_heading,banner_description,banner_status";
+        // $this->pagination_params['fields'] = "banner_id,,banner_page,banner_heading,banner_sub_heading,banner_description,banner_status";
+        $this->pagination_params['fields'] = "banner_id,banner_page,banner_heading,banner_sub_heading,banner_status";
         //$this->pagination_params['fields'] = "banner_id,banner_heading,banner_status";
 
         parent::__construct();
@@ -99,6 +100,7 @@ class Model_banner extends MY_Model
             'name' => 'banner_page',
             'label' => 'Page',
             'type' => 'hidden',
+              'type_dt' => 'text',
             'attributes' => array(),
             'js_rules' => '',
             'rules' => 'trim|htmlentities'
@@ -138,6 +140,7 @@ class Model_banner extends MY_Model
            'label' => 'Description',
            'type' => 'editor',
              //'type' => 'hidden',
+             
            'attributes' => array(),
            'js_rules' => 'required',
            'rules' => 'trim|htmlentities'
