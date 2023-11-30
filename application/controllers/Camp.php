@@ -18,9 +18,9 @@ class Camp extends MY_Controller {
     {
         global $config;
 
-        $this->layout_data['title'] = 'Football camps 2021 | Upcoming camps | Phase 3 kicking';
-        $this->layout_data['meta_data']['keywords'] = '';
-        $this->layout_data['meta_data']['description'] = 'Brace yourself for the upcoming Phase 3 kicking football camps 2021, get enrolled as fast as you can before the slots fill in.';
+        // $this->layout_data['title'] = 'Football camps 2021 | Upcoming camps | Phase 3 kicking';
+        // $this->layout_data['meta_data']['keywords'] = '';
+        // $this->layout_data['meta_data']['description'] = 'Brace yourself for the upcoming Phase 3 kicking football camps 2021, get enrolled as fast as you can before the slots fill in.';
         // Get banner
         $param['where']['banner_id'] =9;
         $data['banner'] = $this->model_banner->find_one($param);

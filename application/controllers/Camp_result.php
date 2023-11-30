@@ -29,10 +29,10 @@ class Camp_result extends MY_Controller {
 
         $para['order'] = 'camp_year_id DESC';
         $data['camp_year'] = $this->model_camp_year->find_all_active($para);
-
+    // debug($data['camp_year'],1);
         $para8['where']['headings_id'] = 8;
         $data['heading8'] = $this->model_headings->find_one($para8);
-        //debug($data['camp_year'],1);
+        // debug($data['camp_year'],1);
 
         $paramnavheading['order'] = 'nav_bar_number';
         $data['main_nav_headings'] = $this->model_nav_bar->find_all($paramnavheading);

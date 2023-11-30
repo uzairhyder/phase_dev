@@ -204,8 +204,7 @@ var EcommerceOrdersView = function () {
         //init date pickers
         $('.date-picker').datepicker({
             rtl: Metronic.isRTL(),
-            autoclose: true,
-            format: 'm/dd/y'
+            autoclose: true
         });
 
         $(".datetime-picker").datetimepicker({

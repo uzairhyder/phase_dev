@@ -258,9 +258,9 @@ var FormScript = function () {
 
     var handleDateTimePicker = function () {
     if($(".ddefault-date-picker").length > 0)
-        $(".ddefault-date-picker").datepicker({format: 'mm-dd-yyy'});
+        $(".ddefault-date-picker").datepicker({format: 'yyyy-mm-dd '});
     if($(".default-datetime-picker").length > 0)
-        $(".default-datetime-picker").datetimepicker({format: 'mm-dd-yyy'});
+        $(".default-datetime-picker").datetimepicker({format: 'yyyy-mm-dd'});
     
     if($(".default-date-picker1").length > 0)
         $(".default-date-picker1").datetimepicker({
@@ -269,7 +269,7 @@ var FormScript = function () {
         });
 
     if($(".default-datetime-picker1").length > 0)
-        $(".default-datetime-picker1").datetimepicker({format: 'm-d-Y H:i'});
+        $(".default-datetime-picker1").datetimepicker({format: 'Y-m-d H:i'});
 }
 
     var toggleElement = function () {

@@ -175,8 +175,8 @@ var FormEditable = function () {
         });
 
         $('#meeting_start').editable({
-            format: 'mm-dd-yyy hh:ii',
-            viewformat: 'mm-dd-yyy hh:ii',
+            format: 'yyyy-mm-dd hh:ii',
+            viewformat: 'dd/mm/yyyy hh:ii',
             validate: function (v) {
                 if (v && v.getDate() == 10) return 'Day cant be 10!';
             },

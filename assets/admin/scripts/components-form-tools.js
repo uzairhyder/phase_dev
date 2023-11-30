@@ -370,14 +370,14 @@ var ComponentsFormTools = function () {
             'autounmask': true
         });
 
-        $("#mask_date").inputmask("m/y/d", {
+        $("#mask_date").inputmask("d/m/y", {
             autoUnmask: true
         }); //direct mask        
-        $("#mask_date1").inputmask("m/y/d", {
+        $("#mask_date1").inputmask("d/m/y", {
             "placeholder": "*"
         }); //change the placeholder
-        $("#mask_date2").inputmask("m/y/d", {
-            "placeholder": "mm/yyy/dd"
+        $("#mask_date2").inputmask("d/m/y", {
+            "placeholder": "dd/mm/yyyy"
         }); //multi-char placeholder
         $("#mask_phone").inputmask("mask", {
             "mask": "(999) 999-9999"

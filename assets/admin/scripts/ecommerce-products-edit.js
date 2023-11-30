@@ -149,8 +149,7 @@ var EcommerceProductsEdit = function () {
         //init datepickers
         $('.date-picker').datepicker({
             rtl: Metronic.isRTL(),
-            autoclose: true,
-            format: 'm/dd/y'
+            autoclose: true
         });
 
         //init datetimepickers
