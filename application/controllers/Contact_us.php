@@ -137,16 +137,16 @@ class Contact_us extends MY_Controller
         // Success
         if (count($post) > 0) {
             // Get Captcha
-            // $captcha_answer = $this->input->post('g-recaptcha-response');
+            $captcha_answer = $this->input->post('g-recaptcha-response');
 
             // // Define Custom rules for captcha
-            // $custom_rule = array(
-            //     'g-recaptcha-response' => array(
-            //         'field' => 'g-recaptcha-response',
-            //         'label' => 'Captcha',
-            //         'rules' => 'required'
-            //     )
-            // );
+            $custom_rule = array(
+                'g-recaptcha-response' => array(
+                    'field' => 'g-recaptcha-response',
+                    'label' => 'Captcha',
+                    'rules' => 'required'
+                )
+            );
 
             // Validation success
             if ($this->validate("model_inquiry", $custom_rule)) {

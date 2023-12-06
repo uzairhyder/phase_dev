@@ -35,7 +35,11 @@ $heading7 = $this->model_headings->find_one($para7);
                 <label>Message</label>
                 <textarea rows="6" placeholder="Message" name="inquiry[inquiry_comments]"></textarea>
             </div>
+              <div class="col-lg-12 mb-4 d-flex flex-column">
+                    <?php $this->load->view('widgets/google_captcha');?>
+               </div>
         </div>
+           
         <div class="col-lg-12 d-flex justify-content-center mt-3 mb-5">
             <button class="clip btn-send">Contact Us</button>
         </div>

@@ -340,7 +340,7 @@ class Model_email extends MY_Model {
     public function inquiry_email($user_data)
     {
         
-        
+        // debug($user_data,1);
         $message = '';
 
         $message .= 'Dear ' . ucfirst($user_data['inquiry_fullname']) . "<br />";
@@ -352,17 +352,11 @@ class Model_email extends MY_Model {
         $list = array($user_data['inquiry_email'],'staff@phase3kicking.com');
         $to = $list;
         $from = 'staff@phase3kicking.com';
-       
         $subject = g('site_name') . " - Inquiry";
-        
-
         $message .= "<br /> Thanks & Regards <br />";
         $message .= g('site_name') . "<br />";
-
         //$param['form_input']['comments'] = $message;
         $user_data['message'] = $message;
-
-
         $msg = $this->load->view('_layout/email_template/inquiry' , $user_data , true);
         // debug($msg,1);
         parent::email_structure($to , $from ,$subject, $msg);

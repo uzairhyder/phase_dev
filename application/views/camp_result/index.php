@@ -46,7 +46,7 @@
                 // $param['where']['camp_result_status !='] = 2;
                 // $param['order'] = 'camp_result_date DESC';
                 // $camp_result = $this->model_camp_result->find_all_active($param);
-                $userquery = "SELECT *
+                 $userquery = "SELECT *
                 FROM mk_camp_result
                 WHERE camp_result_year = {$value['camp_year_id']}
                   AND camp_result_status = 1
@@ -54,36 +54,35 @@
                 $que12 = $this->db->query($userquery);
                 $camp_result  = $que12->result_array();
                 ?>
-
                 <?php
-                if (!empty($camp_result)) {
-                  usort($camp_result, function ($a, $b) {
+if (!empty($camp_result)) {
+      usort($camp_result, function ($a, $b) {
                     return strtotime($b['camp_result_date']) - strtotime($a['camp_result_date']);
                   });
-                  foreach ($camp_result as $key => $crvalue) {
-                ?>
-                    <tr>
-                      <?php if (!empty($crvalue)) { ?>
-                        <td style="width: 20%;"><?= date("F j, Y", strtotime($crvalue['camp_result_date'])) ?></td>
-                        <td style="width: 20%;"><?php echo $crvalue['camp_result_city'] ?></td>
-                        <td style="width: 20%;"><?php echo $crvalue['camp_result_state'] ?></td>
-                        <td style="width: 30%;">
-                          <a class="camp_link" target="_blank" href="<?php echo get_image($crvalue['camp_result_image_path'], $crvalue['camp_result_image']) ?>">
-                            <?php echo $crvalue['camp_result_title'] ?>
-                          </a>
-                        </td>
-                      <?php } else { ?>
-                        <td colspan="4" style="width: 20%;">Data Not Found</td>
-                      <?php } ?>
-                    </tr>
-                  <?php
-                  }
-                } else {
-                  ?>
-                  <tr>
-                    <td colspan="4" style="width: 20%;">Data Not Found</td>
-                  </tr>
-                <?php } ?>
+    foreach ($camp_result as $key => $crvalue) {
+        ?>
+        <tr>
+            <?php if (!empty($crvalue)) { ?>
+                <td style="width: 20%;"><?= date("F j, Y", strtotime($crvalue['camp_result_date'])) ?></td>
+                <td style="width: 20%;"><?php echo $crvalue['camp_result_city'] ?></td>
+                <td style="width: 20%;"><?php echo $crvalue['camp_result_state'] ?></td>
+                <td style="width: 30%;">
+                    <a class="camp_link" target="_blank" href="<?php echo get_image($crvalue['camp_result_image_path'], $crvalue['camp_result_image']) ?>">
+                        <?php echo $crvalue['camp_result_title'] ?>
+                    </a>
+                </td>
+            <?php } else { ?>
+                <td colspan="4" style="width: 20%;">Data Not Found</td>
+            <?php } ?>
+        </tr>
+    <?php
+    }
+} else {
+    ?>
+    <tr>
+        <td colspan="4" style="width: 20%;">Data Not Found</td>
+    </tr>
+<?php } ?>
               </tbody>
             </table>
           <?php } ?>

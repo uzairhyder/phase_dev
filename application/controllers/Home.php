@@ -36,32 +36,51 @@ class Home extends MY_Controller
 
         $parayear['order'] = 'camp_year_id DESC';
         $parayear['where']['camp_year_status !='] = 2;
-        $data['camp_year'] = $this->model_camp_year->find_all_active($parayear);
-        // debug($data['camp_year']['camp_year_id'],1);
-        //         $param1['where']['camp_year_result'] == $data['camp_year']['camp_year_id'];
-        //         $param1['where']['camp_featured'] = 1;
-        //         $param1['order'] = 'camp_date';   
-        // 		$param1['limit'] = 10;
-        //         $data['upcoming_camp'] = $this->model_camp->find_all_active($param1);
+        $data['camp_year'] = $this->model_camp_year->find_one($parayear);
+            // debug($data['camp_year']['camp_year_id'],1);
+//         $param1['where']['camp_year_result'] == $data['camp_year']['camp_year_id'];
+//         $param1['where']['camp_featured'] = 1;
+//         $param1['order'] = 'camp_date';   
+// 		$param1['limit'] = 10;
+//         $data['upcoming_camp'] = $this->model_camp->find_all_active($param1);
+        
+//         	$param1['where']['camp_year_result'] = $data['camp_year']['camp_year_id'];
+// 			$param1['order'] = 'camp_date DESC';
+// 			$param1['limit'] = 10;
+// 			$data['upcoming_camp'] = $this->model_camp->find_all_active($param1);
 
-        // $param1['where']['camp_year_result'] = $data['camp_year']['camp_year_id'];
-        // $param1['order'] = 'camp_date DESC';
-        // $param1['limit'] = 11;
-        // $data['upcoming_camp'] = $this->model_camp->find_all_active($param1);
-        $upcoming_camp = "SELECT * FROM mk_camp 
-        WHERE camp_status = '1' 
-        ORDER BY STR_TO_DATE(camp_date, '%m/%d/%Y') DESC, STR_TO_DATE(camp_date, '%m-%d-%Y') DESC
-        LIMIT 10";
+
+        $upcoming_camp = "SELECT * FROM mk_camp WHERE camp_status = '1' ORDER BY STR_TO_DATE(camp_date, '%m/%d/%Y') DESC, STR_TO_DATE(camp_date, '%Y-%m-%d') DESC    Limit 10";
         $que12 = $this->db->query($upcoming_camp);
         $data['upcoming_camp'] = $que12->result_array();
-        
-        // debug($usersData, 1);
+
+        // $upcoming_camp = "SELECT * FROM mk_camp 
+  
+        // WHERE camp_status = '1' 
+        // ORDER BY STR_TO_DATE(camp_date, '%m/%d/%Y') DESC, STR_TO_DATE(camp_date, '%m-%d-%Y') DESC
+        // LIMIT 10";
+        // $que12 = $this->db->query($upcoming_camp);
+        // $data['upcoming_camp'] = $que12->result_array();
+								
         //  $para['order'] = 'camp_year_id DESC';
         // $para['where']['camp_year_status !='] = 2;
         // $data['camp_year'] = $this->model_camp_year->find_one($para);
         //     debug( $data['camp_year'])
+// Sort the items based on the date in descending order
+usort($data['upcoming_camp'], function ($a, $b) {
+    $dateA = strtotime($a['camp_date']); // Convert slashes to dashes
+    $dateB = strtotime($b['camp_date']);
 
-        // debug($data['upcoming_camp'],1);    
+    // Compare the dates in descending order
+    if ($dateB != $dateA) {
+        return $dateB - $dateA;
+    }
+
+    // If the dates are the same, compare using the full date string
+    return strcmp($b['date'], $a['date']);
+});
+
+    
         $param2['where']['team_featured'] = 1;
         $param2['limit'] = 4;
         $data['featured_team'] = $this->model_team->find_all_active($param2);
@@ -97,8 +116,8 @@ class Home extends MY_Controller
         $paramnavheading['order'] = 'nav_bar_number';
         $data['main_nav_headings'] = $this->model_nav_bar->find_all($paramnavheading);
         // debug( $data['main_nav_headings'],1);
-
-
+        
+        
         // Select the navigation items from the database and order them by position and created_at
         // $this->db->select('*');
         // $this->db->from('mk_nav_headings');
@@ -144,7 +163,7 @@ class Home extends MY_Controller
         //debug($this->layout_data['title'],1);
 
         // Load View
-        $this->load_view("index", $data,$usersData);
+        $this->load_view("index", $data);
     }
 
     public function detail($slug = '')

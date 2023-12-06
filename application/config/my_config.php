@@ -243,8 +243,8 @@ define("FB_APP_SECRET" , "");
 
 
 //GOOGLE Captcha credential (General Captcha)
-define("GOOGLE_CAPTCHA_SITE_KEY" , "6LfKzlgUAAAAALDKUwes1dtMA_suhOU7gCh3wHsz");
-define("GOOGLE_CAPTCHA_SECRET_KEY" , "6LfKzlgUAAAAAIJOv8FVl452T6yCpVt8BS_GBEcZ");
+define("GOOGLE_CAPTCHA_SITE_KEY" , "6LfwGCgpAAAAANyO4pZE12AMb9zaA1DcW7AQ1KKO");
+define("GOOGLE_CAPTCHA_SECRET_KEY" , "6LfwGCgpAAAAAA9ONfZfBH6gVdLAYLtrRF1ByX1b");
 
 
 // 2CO Two Checkout Configs

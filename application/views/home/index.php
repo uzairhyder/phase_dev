@@ -98,7 +98,7 @@
 				<div class="table-responsive mac-responsive">
 					<table class="table" style="color: #fff;">
 						<thead>
-							<!-- <h2 style="color: #fff;"><?php echo $camp_year['camp_year_title'] ?></h2> -->
+							<!--<h2 style="color: #fff;"><?php echo $camp_year['camp_year_title'] ?></h2>-->
 							<tr>
 								<th>Date</th>
 								<th>Major City</th>
@@ -108,7 +108,9 @@
 							</tr>
 						</thead>
 						<tbody>
-							<? foreach ($upcoming_camp as $key => $value) {?>
+							<?
+		
+							foreach ($upcoming_camp as $key => $value) { ?>
 								<tr>
 									<td style="width: 20%;"><?= date("F j, Y", strtotime($value['camp_date'])) ?></td>
 									<td style="width: 20%;"><?php echo $value['camp_city'] ?></td>
@@ -121,7 +123,7 @@
 
 					</table>
 
-					 <!-- old work -->
+					<!-- old work -->
 				
 					<!-- end -->
 
